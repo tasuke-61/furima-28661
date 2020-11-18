@@ -28,7 +28,7 @@ Things you may want to cover:
 | Column            |Type  |Options     |
 |-------------------|------|------------|
 |nickname           |string|null: false |
-|mail               |string|null: false |
+|email              |string|null: false |
 |encrypted_password |string|null: false |
 |family_name        |string|null: false |
 |first_name         |string|null: false |
@@ -44,14 +44,18 @@ has_many :purchase_records
 
 ## itemsテーブル
 
-| Column |Type      |Options                        |
-|--------|----------|-------------------------------|
-|name    |string    |null: false                    |
-|explain |text      |null: false                    |
-|item_id |integer   |null: false                    |
-#category#status#delivery_fee#shipping_place#shipping_day
-|price   |integer   |null: false                    |
-|user    |references|null: false, foreign_key: true |
+| Column          |Type      |Options                        |
+|-----------------|----------|-------------------------------|
+|name             |string    |null: false                    |
+|explain          |text      |null: false                    |
+|item_id          |integer   |null: false                    |
+|category_id      |integer   |null: false                    |
+|status_id        |integer   |null: false                    |
+|delivery_fee_id  |integer   |null: false                    |
+|shipping_place_id|integer   |null: false                    |
+|shipping_day_id  |integer   |null: false                    |
+|price            |integer   |null: false                    |
+|user             |references|null: false, foreign_key: true |
 
 
 ### Association
@@ -79,7 +83,7 @@ belongs_to :item
 |---------------|----------|-------------------------------|
 |post_number    |string    |null: false                    |
 |address_id     |integer   |null: false                    |
-#prefecture
+|prefecture_id  |integer   |null: false                    |
 |city           |string    |null: false                    |
 |house_number   |string    |null: false                    |
 |building_name  |string    |                               |
